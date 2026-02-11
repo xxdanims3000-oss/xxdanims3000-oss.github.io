@@ -168,6 +168,24 @@ p, ul, ol {
 }
 
 @media screen and (max-width: 800px) {
+    .galleryGrid {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top:30vw;
+    }
+
+    .galleryImg {
+        max-width: 40vw;
+        max-height: 40vw;
+    }
+
+    h1, h3 {
+        font-size: 6vw;
+    }
+
+    p {
+        font-size: 3.5vw;
+    }
+
     .navBar {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
@@ -179,33 +197,12 @@ p, ul, ol {
         font-size: 20px;
         transform: translateY(0);
     }
-}
 
-@media screen and (max-width: 800px) {
+    .navBtn:hover {
+        transform:scale(1.1);
+    }
     .main {
-        position: static;
-        margin-top: 120px;
+        position: absolute;
         font-size: 4vw;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .galleryGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .galleryImg {
-        max-width: 40vw;
-        max-height: 40vw;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    h1, h3 {
-        font-size: 6vw;
-    }
-
-    p {
-        font-size: 3.5vw;
     }
 }
