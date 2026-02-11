@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Info || D-Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main2">
+        <h1>Character Info</h1>
+        <h3>Learn about different characters!</h3>
+        <br>
+        <div class="grid" id="charGrid">
+            <button type="button" class="infoBtn" data-character="umbra">
+                <img src="Images/Umbra.png" alt="Umbra" class="infoImg">
+                <br>
+                <h3>Umbra</h3>
+            </button>
+            <button type="button" class="infoBtn" data-character="deba">
+                <img src="Images/Deba.jpg" alt="Deba" class="infoImg">
+                <br>
+                <h3>Deba</h3>
+            </button>
+            <button type="button" class="infoBtn" data-character="cotf">
+                <img src="Images/CotF.png" alt="Child of the Forest" class="infoImg">
+                <br>
+                <h3>Child of the Forest</h3>
+            </button>
+        </div>
+    </div>
+    <div class="navBar">
+        <a href="gallery.html" class="navBtn"><strong>Art Gallery</strong></a>
+        <a href="home.html" class="navBtn"><strong>Home</strong></a>
+        <a href="cs.html" class="navBtn"><strong>Projects</strong></a>
+        <a href="cs.html" class="navBtn"><strong>Software Info</strong></a>
+        <a href="cs.html" class="navBtn"><strong>Coding Lessons</strong></a>
+        <a href="cs.html" class="navBtn"><strong>Cat pics</strong></a>
+    </div>
+    <div class="main2" id="characterCard" style="display:none;"></div>
+    <script>
+        const characterData = {
+            umbra: {
+                name: "Umbra",
+                image: "Images/Umbra.png",
+                information: "A victim of Dominus Abyssi's Ventriloquist Infector. Umbra was infected when he was 12 and had lived onto 28 before his friend Jophial shot out the Ventriloquist's curse, but sadly Umbra died with it.",
+                aliases: "Umbra (normal), it (by Trevor and his group)"
+            },
+            deba: {
+                name: "Deba",
+                image: "Images/Deba.jpg",
+                information: "A young Sieta who represents the angels. Deba is brothers with Chronulus and a part of the XXD group. He is the only person from the XXDs that isn't hated by Deacon due to his general dissotiation with Deacon.",
+                aliases: "Deba (normal)"
+            },
+            cotf: {
+                name: "Child of the Forest",
+                image: "Images/CotF.png",
+                information: "While the Child of the Forest only appears once in the entirety of XXD, they do hold a role. The Child of the Forest is a being designed by Dominus Abyssi to watch over his targets, but they soon became wildly disobedient and were cast away into the Kamfurdam Forest alongside all the other rejects. The Children of the Forest actually have different behaviors and ages based off of their eyes. One eye means they are a baby and will not react to being touched or seen. Two eyes means they are an adult and will alert the Ventriloquist of your presence if seen or approached. Three eyes means they are among the leaders and will try to hunt you down if you get too close or stare at them for too long.",
+                aliases: "Child of the Forest (singular), Children of the forest (plural), the being (Trevor)"
+            }
+        }
+
+        const card = document.getElementById("characterCard");
+
+        document.getElementById("charGrid").addEventListener("click", (e) => {
+            const btn = e.target.closest(".infoBtn");
+            if (!btn) return;
+
+            if (btn) {
+                const key = btn.dataset.character;
+                const char = characterData[key];
+                if (!char) return;
+                card.innerHTML = `
+                <button type="button" class="closeBtn" id="infoClose">X</button>
+                <h1>${char.name}</h1>
+                <img src="${char.image}" alt="${char.name}" class="charImg">
+                <p>description: ${char.information}</p>
+                <br>
+                <p>aliases: ${char.aliases}</p>
+                `;
+                card.style.display = "inline-block";
+            }
+        },
+        card.addEventListener("click", (e) => {
+            const closeButton = e.target.closest(".closeBtn");
+            if (!closeButton) return;
+            card.style.display = "none";
+        })    
+    )
+        
+    </script>
+</body>
+</html>
