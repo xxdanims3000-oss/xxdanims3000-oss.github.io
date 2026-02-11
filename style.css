@@ -170,7 +170,7 @@ p, ul, ol {
 @media screen and (max-width: 800px) {
     .galleryGrid {
         grid-template-columns: repeat(2, 1fr);
-        margin-top:30vw;
+        margin-top:40vw;
     }
 
     .galleryImg {
@@ -204,5 +204,6 @@ p, ul, ol {
     .main {
         position: absolute;
         font-size: 4vw;
+        margin-top:40vw;
     }
 }
