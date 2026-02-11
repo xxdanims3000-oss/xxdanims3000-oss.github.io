@@ -84,6 +84,7 @@ p, ul, ol {
     background: linear-gradient(to left, crimson, blue);
 }
 
+
 .navBtn {
     background: linear-gradient(to right, crimson, blue);
     text-align:center;
@@ -164,4 +165,47 @@ p, ul, ol {
     height: 100vw;
     width: 60vw;
     margin: auto;
+}
+
+@media (max-width: 800px) {
+    .navBar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .navBtn {
+        padding-top: 20px;
+        font-size: 20px;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 800px) {
+    .main {
+        position: static;
+        margin-top: 120px;
+        font-size: 4vw;
+    }
+}
+
+@media (max-width: 800px) {
+    .galleryGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .galleryImg {
+        max-width: 40vw;
+        max-height: 40vw;
+    }
+}
+
+@media (max-width: 800px) {
+    h1, h3 {
+        font-size: 6vw;
+    }
+
+    p {
+        font-size: 3.5vw;
+    }
 }
