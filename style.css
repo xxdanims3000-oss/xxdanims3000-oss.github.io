@@ -131,7 +131,7 @@ p, ul, ol {
     border-radius: 10px;
     background: linear-gradient(to right, crimson, blue);
     color: black;
-    font-size: 20px;
+    font-size: 2em;
     display:inline-block;
     position:sticky;
     top: 200px;
@@ -173,13 +173,23 @@ p, ul, ol {
     }
 
     .galleryImg {
-        max-width: 40vw;
+        max-width: 35vw;
         max-height: 40vw;
     }
 
     .galleryMain {
-        margin-top: 40vw;
-        margin-right: 1vw;
+        margin-top: 70vw;
+        width: 80%;
+        margin-right: 7vw;
+    }
+
+    .filterBar {
+        padding: 2vw;
+    }
+
+    .filterBtn {
+        line-height: 1vw;
+        margin-top:2vw;
     }
 }
 
@@ -189,7 +199,11 @@ p, ul, ol {
     }
 
     p {
-        font-size: 3.5vw;
+        font-size: 2em;
+    }
+
+    ul, ol {
+        font-size: 2em;
     }
 }
 
@@ -215,6 +229,7 @@ p, ul, ol {
     .main {
         position: absolute;
         font-size: 4vw;
-        margin-top:40vw;
+        margin-top:70vw;
+        margin-right: 5vw;
     }
 }
