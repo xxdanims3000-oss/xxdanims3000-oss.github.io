@@ -170,12 +170,16 @@ p, ul, ol {
 @media screen and (max-width: 800px) {
     .galleryGrid {
         grid-template-columns: repeat(2, 1fr);
-        margin-top:40vw;
     }
 
     .galleryImg {
         max-width: 40vw;
         max-height: 40vw;
+    }
+
+    .galleryMain {
+        margin-top: 40vw;
+        margin-right: 1vw;
     }
 }
 
