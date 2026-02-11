@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>art gallery || D-Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="galleryMain">
+        <h1>Gallery</h1>
+        <input type="text" id="filterBar" placeholder="filter (ex: scenic; character)" class="filterBar">
+        <button type="button" id="searchFilter" class="filterBtn">Search by filter</button>
+        <br>
+        <div class="Tags">
+            <p>Acceptable Tags</p>
+            <button type="button" id="tagButtonDown" class="btn" style="display:inline-block">🔽</button>
+            <button type="button" id="tagButtonUp" class="btn" style="display:none;">🔼</button>
+            <br>
+            <ul style="display:none" id="tags">
+                <li>character</li>
+                <li>xxd</li>
+                <li>scenic</li>
+                <li>show</li>
+                <li>movie</li>
+                <li>book</li>
+            </ul>
+        </div>
+        <div class="galleryGrid">
+            <img src="Images/Deba.jpg" alt="Deba" class="galleryImg" data-character data-xxd data-show>
+            <img src="Images/NICE2.png" alt="Deacon w/ black hole in bg" class="galleryImg" data-scenic data-xxd data-show>
+            <img src="Images/Umbra.png" alt="Umbra" class="galleryImg" data-character data-xxd data-book data-movie>
+            <img src="Images/CotF.png" alt="Child of the Forest" class="galleryImg" data-character data-xxd data-book data-movie>
+        </div>
+    </div>
+    <div class="navBar">
+        <a href="home.html" class="navBtn"><strong>Home</strong></a>
+        <a href="cs.html" class="navBtn"><strong>Character Info</strong></a>
+        <a href="cs.html" class="navBtn"><strong>Projects</strong></a>
+        <a href="cs.html" class="navBtn"><strong>Software Info</strong></a>
+        <a href="cs.html" class="navBtn"><strong>Coding Lessons</strong></a>
+        <a href="cs.html" class="navBtn"><strong>Cat pics</strong></a>
+    </div>
+    <script>
+        const filterBar = document.getElementById("filterBar");
+        const button = document.getElementById("searchFilter");
+        document.addEventListener('keydown', (event) => {
+            if (event.key === "Enter") {
+                const filter = filterBar.value.toLowerCase();
+            const allImages = document.querySelectorAll(".galleryImg");
+            allImages.forEach(function(image) {
+                const category = "data-" + filter;
+                if (image.hasAttribute(category) || filter === "") {
+                    image.style.display = "block";
+                } else {
+                    image.style.display = "none";
+                }
+            })
+            }
+        })
+        button.addEventListener("click", function() {
+            const filter = filterBar.value.toLowerCase();
+            const allImages = document.querySelectorAll(".galleryImg");
+            allImages.forEach(function(image) {
+                const category = "data-" + filter;
+                if (image.hasAttribute(category) || filter === "") {
+                    image.style.display = "block";
+                } else {
+                    image.style.display = "none";
+                }
+            })
+        });
+        const tagsDown = document.getElementById("tagButtonDown");
+        const tagsUp = document.getElementById("tagButtonUp");
+        const tagsList = document.getElementById("tags");
+        tagsDown.addEventListener("click", function() {
+            tagsDown.style.display = "none";
+            tagsUp.style.display = "inline-block";
+            tagsList.style.display = "inline-block";
+        })
+        tagsUp.addEventListener("click", function() {
+            tagsDown.style.display = "inline-block";
+            tagsUp.style.display = "none";
+            tagsList.style.display = "none";
+        })
+    </script>
+</body>
+</html>
